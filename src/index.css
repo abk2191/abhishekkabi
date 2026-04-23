@@ -125,8 +125,34 @@ html {
   font-family: "Inter", sans-serif;
 }
 
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 4px;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
 .logo h1 {
   color: #000033;
+  margin-left: 20px;
+}
+
+.play-button {
+  background: none;
+  border: none;
+}
+
+.player-music {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 10px;
 }
 
 /* Add this new wrapper class in Banner.jsx */
@@ -185,6 +211,7 @@ html {
 
 .hii {
   font-size: 40px;
+  margin-top: 30px;
 }
 
 .desc {
@@ -262,6 +289,46 @@ p {
   border-radius: 50%;
   background-color: rgb(235, 234, 234);
 }
+
+/* Add this to your existing index.css */
+
+.song-name {
+  white-space: nowrap;
+  margin: 0;
+  font-size: 8.5px;
+  font-weight: 500;
+}
+
+.song-name-place {
+  width: 140px; /* keep it tight like your UI */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* moving element */
+.scroll-track {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* actual animation */
+.scroll-track.animate {
+  animation: scroll-right 8s linear infinite;
+}
+
+/* THIS is the key fix */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/******************************media queries************************************/
 
 @media (max-width: 768px) {
   .logo h1 {

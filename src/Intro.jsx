@@ -1,7 +1,7 @@
 function Intro() {
   return (
     <div className="intro-container">
-      <p className="hii">Hi, I am Abhishek.</p>
+      <p className="hii">👋 Hi, I am Abhishek.</p>
       {/*------------------------------------------------------------------- */}
       <div className="placeholder-div">
         <p className="desc">

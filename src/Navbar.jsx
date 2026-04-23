@@ -1,4 +1,5 @@
 import React from "react";
+import MusicPlayer from "./MusicPlayer";
 
 const Navbar = ({
   isSidebarOpen,
@@ -23,7 +24,12 @@ const Navbar = ({
           <span></span>
         </button>
         <div className="logo">
-          <h1>ABHISHEK KABI</h1>
+          <div>
+            <h1>ABHISHEK KABI</h1>
+          </div>
+          <div>
+            <MusicPlayer />
+          </div>
         </div>
       </div>
     </div>
