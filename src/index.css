@@ -300,7 +300,6 @@ p {
 }
 
 .song-name-place {
-  width: 140px; /* keep it tight like your UI */
   overflow: hidden;
   position: relative;
   display: flex;
