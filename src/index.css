@@ -300,30 +300,31 @@ p {
 }
 
 .song-name-place {
+  width: 140px;
   overflow: hidden;
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
-/* moving element */
 .scroll-track {
-  display: inline-block;
+  display: flex;
+  width: max-content;
+}
+
+.song-name {
   white-space: nowrap;
 }
 
-/* actual animation */
+/* THIS is the key */
 .scroll-track.animate {
-  animation: scroll-right 8s linear infinite;
+  animation: loop 8s linear infinite;
 }
 
-/* THIS is the key fix */
-@keyframes scroll-right {
+@keyframes loop {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
 }
 
