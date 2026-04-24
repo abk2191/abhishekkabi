@@ -325,6 +325,19 @@ span {
   padding: 0;
 }
 
+.place-holder {
+  height: 80px;
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
 /* Add this new wrapper class in Banner.jsx */
 .banner-container {
   background-color: var(--banner-bg) !important;
