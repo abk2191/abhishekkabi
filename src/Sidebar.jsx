@@ -14,14 +14,17 @@ const Sidebar = ({ sidebarRef }) => {
       <div className="sidebar-items-container">
         <div className="sidebar-items-wrapper">
           <div className="flex-box-one">
+            <i class="fa-solid fa-angles-right"></i>
             <p>Profile</p>
           </div>
 
           <div className="flex-box-one">
+            <i class="fa-solid fa-angles-right"></i>
             <p>Projects</p>
           </div>
 
           <div className="flex-box-one">
+            <i class="fa-solid fa-angles-right"></i>
             <p>Contact</p>
           </div>
         </div>
@@ -48,7 +51,7 @@ const Sidebar = ({ sidebarRef }) => {
             ></i>
           </div>
           <div>
-            <button className="github-link">Check my Github</button>
+            <button className="github-link">Check out my Github</button>
           </div>
         </div>
       </div>

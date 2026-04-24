@@ -81,15 +81,20 @@ function App() {
   }, [shouldRenderSidebar]);
 
   // Close sidebar when clicking outside OR pressing ESC
+  // Close sidebar when clicking outside OR pressing ESC
   useEffect(() => {
     const handleClickOutside = (event) => {
       const isHamburgerClick = hamburgerRef.current?.contains(event.target);
+      const isThemeToggleClick = event.target.closest(".theme-toggle"); // Check if click is on theme toggle or its children
+      const isMusicPlayerClick = event.target.closest(".play-button");
 
       if (
         sidebarRef.current &&
         isSidebarOpen &&
         !sidebarRef.current.contains(event.target) &&
-        !isHamburgerClick
+        !isHamburgerClick &&
+        !isThemeToggleClick && // Add this condition
+        !isMusicPlayerClick
       ) {
         closeSidebar();
       }

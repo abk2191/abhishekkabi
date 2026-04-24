@@ -1,5 +1,6 @@
 import React from "react";
 import MusicPlayer from "./MusicPlayer";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = ({
   isSidebarOpen,
@@ -23,6 +24,7 @@ const Navbar = ({
           <span></span>
           <span></span>
         </button>
+        <ThemeToggle />
         <div className="logo">
           <div>
             <p>ABHISHEK KABI</p>

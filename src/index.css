@@ -1,4 +1,165 @@
 /***************************************************************************************/
+/******************************* DARK / LIGHT THEME STYLES *****************************/
+/***************************************************************************************/
+
+/* Light theme (default - your original colors) */
+:root {
+  --bg-primary: whitesmoke;
+  --bg-secondary: white;
+  --text-color: #000033;
+  --sidebar-text: #000033;
+  --sidebar-bg: white;
+  --border-color: rgb(243, 241, 241);
+  --divider-color: rgb(235, 234, 234);
+  --banner-bg: black;
+  --button-border: #000033;
+  --icon-color: #000033;
+  --hamburger-color: #000033;
+  --divider-dot-line: rgb(235, 234, 234);
+  --border-bottom: transparent;
+}
+
+/* Dark theme - black background */
+[data-theme="dark"] {
+  --bg-primary: black;
+  --bg-secondary: black;
+  --text-color: #ffffff;
+  --sidebar-text: #ffffff;
+  --sidebar-bg: black;
+  --border-color: white;
+  --divider-color: #333333;
+  --banner-bg: black;
+  --button-border: #ffffff;
+  --icon-color: #ffffff;
+  --hamburger-color: #ffffff;
+  --divider-dot-line: #ffffff;
+  --border-bottom: white;
+}
+
+/* Apply background and text colors */
+body,
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+}
+
+/* Make all containers use the theme background */
+.placeholder-div,
+.intro-container,
+.divider {
+  background-color: var(--bg-primary);
+}
+
+.navbar {
+  background: var(--bg-secondary) !important;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.05),
+    0 3px 8px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="dark"] .navbar {
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.3),
+    0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.logo p {
+  color: var(--text-color) !important;
+}
+
+.hamburger span {
+  background-color: var(--hamburger-color) !important;
+}
+
+.hamburger.open span:nth-child(1),
+.hamburger.open span:nth-child(3) {
+  background-color: var(--hamburger-color) !important;
+}
+
+.sidebar {
+  background: var(--sidebar-bg) !important;
+  border-top: 1px solid var(--border-color) !important;
+  border-right: 1px solid var(--border-color) !important;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.05),
+    0 3px 8px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="dark"] .sidebar {
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.3),
+    0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-items-container p {
+  color: var(--sidebar-text) !important;
+}
+
+.resume-button-container {
+  border: 1px solid var(--button-border) !important;
+}
+
+.github-link-button {
+  border: 1px solid var(--button-border) !important;
+}
+
+.download-resume-button {
+  color: var(--button-border) !important;
+}
+
+.github-link {
+  color: var(--button-border) !important;
+}
+
+.fa-solid,
+.fa-brands {
+  color: var(--icon-color) !important;
+}
+
+.banner-container {
+  background-color: var(--banner-bg) !important;
+}
+
+/* Divider elements - dots and line should be white in dark mode */
+.the-line {
+  background-color: var(--divider-dot-line) !important;
+}
+
+.the-dot {
+  background-color: var(--divider-dot-line) !important;
+}
+
+.song-name {
+  color: var(--text-color) !important;
+}
+
+/* Fix for Intro component text and background */
+.intro-container p {
+  color: var(--text-color) !important;
+}
+
+.bold-green {
+  color: var(--text-color) !important;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  transition: opacity 0.2s;
+}
+
+/* Keep all your original styles below this line - NOTHING CHANGED */
+/***************************************************************************************/
 /*************************** NAVBAR AND SIDEBAR STYLES *********************************/
 /***************************************************************************************/
 
@@ -138,6 +299,8 @@ h1 {
 }
 
 .logo p {
+  margin: 0;
+  padding: 0;
   color: #000033;
   margin-left: 20px;
   font-family: "Smooch Sans", sans-serif;
@@ -164,26 +327,22 @@ span {
 
 /* Add this new wrapper class in Banner.jsx */
 .banner-container {
-  background-color: black;
+  background-color: var(--banner-bg) !important;
   height: 350px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   overflow: hidden;
 }
 
 .banner-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   display: block;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
 }
 
 .banner-image.active {
@@ -357,8 +516,7 @@ p {
 
 .sidebar-items-container p {
   color: #000033;
-
-  font-size: 44px;
+  font-size: 35px;
 }
 
 .flex-box-one {
