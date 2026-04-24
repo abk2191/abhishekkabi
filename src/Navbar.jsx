@@ -25,7 +25,7 @@ const Navbar = ({
         </button>
         <div className="logo">
           <div>
-            <h1>ABHISHEK KABI</h1>
+            <p>ABHISHEK KABI</p>
           </div>
           <div>
             <MusicPlayer />

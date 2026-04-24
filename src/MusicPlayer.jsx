@@ -36,12 +36,8 @@ function MusicPlayer() {
       </button>
       <div className="song-name-place">
         <div className={`scroll-track ${isPlaying ? "animate" : ""}`}>
-          <span className="song-name">
-            Spiritual Antiseptic ft. Hallucinogen&nbsp;&nbsp;&nbsp;
-          </span>
-          <span className="song-name">
-            Spiritual Antiseptic ft. Hallucinogen
-          </span>
+          <span className="song-name">Feel Good Inc. Gorillaz</span>
+          <span className="song-name">Feel Good Inc. Gorillaz</span>
         </div>
       </div>
     </div>
