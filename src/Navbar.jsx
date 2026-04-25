@@ -12,7 +12,14 @@ const Navbar = ({
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
-    navigate("/"); // This will navigate to /abhishekkabi/ because of basename
+    // Force a complete page reload to the correct home URL
+    // This ensures the URL is exactly correct
+    if (window.location.pathname !== "/abhishekkabi/") {
+      window.location.href = "/abhishekkabi/";
+    } else {
+      // If already on home page, just navigate normally
+      navigate("/");
+    }
   };
 
   return (

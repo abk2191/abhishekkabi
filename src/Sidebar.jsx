@@ -70,6 +70,29 @@ const Sidebar = ({ sidebarRef, closeSidebar }) => {
           </div>
         </div>
 
+        <div className="game-div-wrapper">
+          <div className="game-div">
+            <i class="fa-solid fa-gamepad"></i>
+            <div
+              className="Play-Color-Match"
+              onClick={() => handleNavigation("/game")}
+              style={{ cursor: "pointer", fontWeight: "bold" }}
+            >
+              Play Color Match
+            </div>
+          </div>
+          {/* */}
+        </div>
+        <div className="source-code-div-wrapper">
+          <div
+            className="source-code-div"
+            style={{ color: "navy", fontWeight: "bold" }}
+          >
+            <i class="fa-solid fa-code"></i>
+            View Source Code
+          </div>
+        </div>
+
         <div className="resume-button-container">
           <div>
             <i
