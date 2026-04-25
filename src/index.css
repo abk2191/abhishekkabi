@@ -328,7 +328,7 @@ span {
 }
 
 .place-holder {
-  height: 80px;
+  height: 150px;
 }
 
 .chevron-icon {
@@ -531,7 +531,7 @@ p {
 
 .sidebar-items-container p {
   color: #000033;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .flex-box-one {
@@ -1063,6 +1063,26 @@ ul {
 
 .fa-code {
   color: var(--game-color) !important;
+}
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+  justify-content: left;
+  gap: 15px;
+}
+
+.project-section p {
+  font-size: 18px;
+  font-family: "Smooch Sans", sans-serif;
+}
+
+.menu-item-div {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 7px;
 }
 
 /******************************media queries************************************/

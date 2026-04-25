@@ -28,6 +28,14 @@ const Sidebar = ({ sidebarRef, closeSidebar }) => {
         <div className="sidebar-items-wrapper">
           <div
             className="flex-box-one"
+            onClick={() => handleNavigation("/")}
+            style={{ cursor: "pointer" }}
+          >
+            <i class="fa-solid fa-house"></i>
+            <p>Home</p>
+          </div>
+          <div
+            className="flex-box-one"
             onClick={() => handleNavigation("/profile")}
             style={{ cursor: "pointer" }}
           >
@@ -56,7 +64,36 @@ const Sidebar = ({ sidebarRef, closeSidebar }) => {
 
           {projectsClicked && (
             <div className="place-holder">
-              {/* Your project content here */}
+              <div className="project-section">
+                <div className="menu-item-div">
+                  <img
+                    src="/abhishekkabi/space-nobg.png"
+                    style={{ height: "25px", width: "25px" }}
+                  />
+                  <p>Space. (PWA)</p>
+                </div>
+                <div className="menu-item-div">
+                  <img
+                    src="/abhishekkabi/proxima-nobg.png"
+                    style={{ height: "25px", width: "25px" }}
+                  />
+                  <p>Proxima Calculator (Native)</p>
+                </div>
+                <div className="menu-item-div">
+                  <img
+                    src="/abhishekkabi/sp-nobg.png"
+                    style={{ height: "25px", width: "25px" }}
+                  />
+                  <p>ScratchPad (Native)</p>
+                </div>
+                <div className="menu-item-div">
+                  <img
+                    src="/abhishekkabi/more.png"
+                    style={{ height: "25px", width: "25px" }}
+                  />
+                  <p>More</p>
+                </div>
+              </div>
             </div>
           )}
 
