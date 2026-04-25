@@ -40,7 +40,7 @@ const Navbar = ({
         </button>
         <ThemeToggle />
         <div className="logo">
-          <div onClick={handleLogoClick} style={{ cursor: "pointer" }}>
+          <div style={{ cursor: "pointer" }}>
             <p>ABHISHEK KABI</p>
           </div>
           <div>

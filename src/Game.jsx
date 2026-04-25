@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom"; // Add this import
 
 function Game() {
+  const navigate = useNavigate(); // Add this hook
   const colors = [
     { name: "RED", hex: "#FF0000" },
     { name: "BLUE", hex: "#0000FF" },
@@ -261,9 +263,9 @@ function Game() {
     startGameTimer();
   };
 
-  // Navigate back to home
+  // Navigate back to home (Banner + Intro)
   const goToHome = () => {
-    window.location.href = "/abhishekkabi/";
+    navigate("/"); // This will navigate to the home page showing Banner and Intro
   };
 
   // Cleanup on unmount
@@ -411,9 +413,7 @@ function Game() {
                     )}
                   </div>
                 )}
-                <h2 style={{ color: "#333", marginBottom: "20px" }}>
-                  Game Over!
-                </h2>
+                <h2 style={{ marginBottom: "20px" }}>Game Over!</h2>
                 <p style={{ fontSize: "24px", marginBottom: "30px" }}>
                   Final Score: {scoreRef.current}
                 </p>
