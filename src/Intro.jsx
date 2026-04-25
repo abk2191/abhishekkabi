@@ -36,7 +36,7 @@ function Intro() {
           Over the last 9 years I have worked on multiple domains in{" "}
           <span className="bold">Bangalore</span>, Such as{" "}
           <span className="bold">"Mainframe Developer"</span>,{" "}
-          <span className="bold">"Software Development Engineer - II"</span>,
+          <span className="bold">"Software Development Engineer"</span>,
           <span className="bold">"IT Analyst"</span>,{" "}
           <span className="bold">"Technical Support Engineer L2"</span>, and few
           more.
