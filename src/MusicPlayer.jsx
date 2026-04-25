@@ -27,6 +27,7 @@ function MusicPlayer() {
 
   return (
     <div className="player-music">
+      <i class="fa-solid fa-music" style={{ fontSize: "12px" }}></i>
       <button className="play-button" onClick={togglePlayPause}>
         {isPlaying ? (
           <i class="fa-solid fa-pause"></i>
@@ -36,8 +37,8 @@ function MusicPlayer() {
       </button>
       <div className="song-name-place">
         <div className={`scroll-track ${isPlaying ? "animate" : ""}`}>
-          <span className="song-name">Feel Good Inc. (Original Mix)</span>
-          <span className="song-name">Feel Good Inc. (Original Mix)</span>
+          <span className="song-name">AVB - Intense (Original Mix)</span>
+          <span className="song-name">AVB - Intense (Original Mix)</span>
         </div>
       </div>
     </div>

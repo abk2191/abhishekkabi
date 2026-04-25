@@ -1,8 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Banner from "./Banner";
 import Intro from "./Intro";
+import Profile from "./Profile";
+import Contact from "./Contact";
 
 function App() {
   //****************************************************************************************/
@@ -81,11 +84,10 @@ function App() {
   }, [shouldRenderSidebar]);
 
   // Close sidebar when clicking outside OR pressing ESC
-  // Close sidebar when clicking outside OR pressing ESC
   useEffect(() => {
     const handleClickOutside = (event) => {
       const isHamburgerClick = hamburgerRef.current?.contains(event.target);
-      const isThemeToggleClick = event.target.closest(".theme-toggle"); // Check if click is on theme toggle or its children
+      const isThemeToggleClick = event.target.closest(".theme-toggle");
       const isMusicPlayerClick = event.target.closest(".play-button");
 
       if (
@@ -93,7 +95,7 @@ function App() {
         isSidebarOpen &&
         !sidebarRef.current.contains(event.target) &&
         !isHamburgerClick &&
-        !isThemeToggleClick && // Add this condition
+        !isThemeToggleClick &&
         !isMusicPlayerClick
       ) {
         closeSidebar();
@@ -115,10 +117,9 @@ function App() {
     };
   }, [isSidebarOpen, closeSidebar]);
 
-  // Focus trap for accessibility (optional but recommended)
+  // Focus trap for accessibility
   useEffect(() => {
     if (isSidebarOpen && sidebarRef.current) {
-      // Focus first focusable element in sidebar
       const focusableElements = sidebarRef.current.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
       );
@@ -133,19 +134,34 @@ function App() {
   //****************************************************************************************/
 
   return (
-    <div>
-      <Navbar
-        isSidebarOpen={isSidebarOpen}
-        isAnimating={isAnimating}
-        toggleSidebar={toggleSidebar}
-        hamburgerRef={hamburgerRef}
-      />
+    <Router basename="/abhishekkabi">
+      <div>
+        <Navbar
+          isSidebarOpen={isSidebarOpen}
+          isAnimating={isAnimating}
+          toggleSidebar={toggleSidebar}
+          hamburgerRef={hamburgerRef}
+        />
 
-      {shouldRenderSidebar && <Sidebar sidebarRef={sidebarRef} />}
+        {shouldRenderSidebar && (
+          <Sidebar sidebarRef={sidebarRef} closeSidebar={closeSidebar} />
+        )}
 
-      <Banner />
-      <Intro />
-    </div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Banner />
+                <Intro />
+              </>
+            }
+          />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

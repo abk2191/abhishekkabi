@@ -1,8 +1,19 @@
 import React from "react";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Sidebar = ({ sidebarRef }) => {
+const Sidebar = ({ sidebarRef, closeSidebar }) => {
   const [projectsClicked, setProjectsClicked] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    console.log("Navigating to:", path); // Debug log
+    navigate(path);
+    // Add a small delay before closing to ensure navigation happens
+    setTimeout(() => {
+      closeSidebar();
+    }, 100);
+  };
 
   return (
     <div
@@ -13,10 +24,13 @@ const Sidebar = ({ sidebarRef }) => {
       aria-modal="true"
       aria-label="Navigation menu"
     >
-      {/* Sidebar content can go here */}
       <div className="sidebar-items-container">
         <div className="sidebar-items-wrapper">
-          <div className="flex-box-one">
+          <div
+            className="flex-box-one"
+            onClick={() => handleNavigation("/profile")}
+            style={{ cursor: "pointer" }}
+          >
             <i className="fa-solid fa-circle-user"></i>
             <p>Profile</p>
           </div>
@@ -25,11 +39,17 @@ const Sidebar = ({ sidebarRef }) => {
             <i
               className="fa-solid fa-diagram-project"
               onClick={() => setProjectsClicked((prev) => !prev)}
+              style={{ cursor: "pointer" }}
             ></i>
-            <p onClick={() => setProjectsClicked((prev) => !prev)}>Projects</p>
+            <p
+              onClick={() => setProjectsClicked((prev) => !prev)}
+              style={{ cursor: "pointer" }}
+            >
+              Projects
+            </p>
             <i
               className={`fa-solid fa-angle-down chevron-icon ${projectsClicked ? "rotated" : ""}`}
-              style={{ marginTop: "5px" }}
+              style={{ marginTop: "5px", cursor: "pointer" }}
               onClick={() => setProjectsClicked((prev) => !prev)}
             ></i>
           </div>
@@ -40,7 +60,11 @@ const Sidebar = ({ sidebarRef }) => {
             </div>
           )}
 
-          <div className="flex-box-one">
+          <div
+            className="flex-box-one"
+            onClick={() => handleNavigation("/contact")}
+            style={{ cursor: "pointer" }}
+          >
             <i className="fa-solid fa-address-card"></i>
             <p>Contact</p>
           </div>

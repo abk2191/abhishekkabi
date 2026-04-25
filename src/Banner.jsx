@@ -13,7 +13,11 @@ function Banner() {
 
   return (
     <div className="banner-container">
-      <img src="./abhi.jpg" className="banner-image" />
+      <img
+        src="/abhishekkabi/Untitled.png"
+        className="banner-image"
+        alt="Banner"
+      />
     </div>
   );
 }
