@@ -65,21 +65,33 @@ const Sidebar = ({ sidebarRef, closeSidebar }) => {
           {projectsClicked && (
             <div className="place-holder">
               <div className="project-section">
-                <div className="menu-item-div">
+                <div
+                  className="menu-item-div"
+                  onClick={() => handleNavigation("/space")}
+                  style={{ cursor: "pointer" }}
+                >
                   <img
                     src="/abhishekkabi/space-nobg.png"
                     style={{ height: "25px", width: "25px" }}
                   />
                   <p>Space. (PWA)</p>
                 </div>
-                <div className="menu-item-div">
+                <div
+                  className="menu-item-div"
+                  onClick={() => handleNavigation("/proxima-calculator")}
+                  style={{ cursor: "pointer" }}
+                >
                   <img
                     src="/abhishekkabi/proxima-nobg.png"
                     style={{ height: "25px", width: "25px" }}
                   />
                   <p>Proxima Calculator (Native)</p>
                 </div>
-                <div className="menu-item-div">
+                <div
+                  className="menu-item-div"
+                  onClick={() => handleNavigation("/scratchpad")}
+                  style={{ cursor: "pointer" }}
+                >
                   <img
                     src="/abhishekkabi/sp-nobg.png"
                     style={{ height: "25px", width: "25px" }}

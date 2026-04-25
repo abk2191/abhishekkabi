@@ -1,3 +1,5 @@
+import "./project-styles.css";
+
 function ProximaCalculator({ currentTheme }) {
   const handleClick = () => {
     window.open(
@@ -8,7 +10,7 @@ function ProximaCalculator({ currentTheme }) {
   };
   return (
     <>
-      <div>
+      <div className="andromeda-wrapper">
         <div className="andromeda-banner">
           <img
             src="./proxima-nobg.png"

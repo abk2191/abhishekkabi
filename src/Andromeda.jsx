@@ -1,3 +1,5 @@
+import "./project-styles.css";
+
 function Andromeda({ currentTheme }) {
   const handleClick = () => {
     window.open(
@@ -8,7 +10,7 @@ function Andromeda({ currentTheme }) {
   };
   return (
     <>
-      <div>
+      <div className="andromeda-wrapper">
         <div className="andromeda-banner">
           <img
             src="./space-nobg.png"

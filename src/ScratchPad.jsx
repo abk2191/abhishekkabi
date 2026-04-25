@@ -1,3 +1,5 @@
+import "./project-styles.css";
+
 function ScratchPad({ currentTheme }) {
   const handleClick = () => {
     window.open(
@@ -8,7 +10,7 @@ function ScratchPad({ currentTheme }) {
   };
   return (
     <>
-      <div>
+      <div className="andromeda-wrapper">
         <div className="andromeda-banner">
           <img src="./sp-nobg.png" style={{ height: "75px", width: "75px" }} />
           <h2>ScratchPad Native</h2>

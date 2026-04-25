@@ -7,6 +7,9 @@ import Intro from "./Intro";
 import Profile from "./Profile";
 import Contact from "./Contact";
 import Game from "./Game";
+import Andromeda from "./Andromeda";
+import ProximaCalculator from "./ProximaCalculator";
+import ScratchPad from "./ScratchPad";
 
 function App() {
   //****************************************************************************************/
@@ -19,21 +22,6 @@ function App() {
   const sidebarRef = useRef(null);
   const hamburgerRef = useRef(null);
   const animationTimeoutRef = useRef(null);
-
-  // Remove these state variables since they'll be managed by Game component through routing
-  // const [gameStarted, setGameStarted] = useState(false);
-  // const [scoreStorage, setScoreStorage] = useState(() => {
-  //   const saved = localStorage.getItem("scores");
-  //   return saved ? JSON.parse(saved) : [];
-  // });
-
-  // useEffect(() => {
-  //   localStorage.setItem("scores", JSON.stringify(scoreStorage));
-  // }, [scoreStorage]);
-
-  // const handleStartGame = () => {
-  //   setGameStarted(true);
-  // };
 
   // Cleanup timeouts on unmount
   useEffect(() => {
@@ -176,6 +164,9 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/game" element={<Game />} />
+          <Route path="/space" element={<Andromeda />} />
+          <Route path="/proxima-calculator" element={<ProximaCalculator />} />
+          <Route path="/scratchpad" element={<ScratchPad />} />
         </Routes>
       </div>
     </Router>

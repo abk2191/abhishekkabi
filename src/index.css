@@ -38,6 +38,10 @@
   --game-color: gold;
 }
 
+.andromeda-wrapper {
+  background-color: var(--bg-primary);
+}
+
 /* Apply background and text colors */
 body,
 html {
@@ -284,7 +288,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
   font-family: "Inter", sans-serif;
 }
 
